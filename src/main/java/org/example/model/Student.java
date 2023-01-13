@@ -52,7 +52,7 @@ public class Student {
     }
 
     public void setDateOfBirth(Integer dateOfBirth) {
-        Integer currentYear = new Date().getYear();
+        Integer currentYear = 2023;
         if (dateOfBirth < 1900 || dateOfBirth > currentYear - 18) {
             throw new DateOfBirthException();
         }
@@ -64,10 +64,11 @@ public class Student {
     }
 
     public void setGender(String gender) {
-        if (!gender.equalsIgnoreCase("M") || !gender.equalsIgnoreCase("F")){
+        if (gender.equalsIgnoreCase("M") || gender.equalsIgnoreCase("F")) {
+            this.gender = Gender.valueOf(gender.toUpperCase());
+        } else {
             throw new GenderException();
         }
-        this.gender = Gender.valueOf(gender.toUpperCase());
     }
 
     @Override

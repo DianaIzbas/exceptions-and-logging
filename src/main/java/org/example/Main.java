@@ -3,6 +3,7 @@ package org.example;
 import org.example.model.Student;
 import org.example.repository.StudentRepository;
 import org.example.utils.Gender;
+import org.example.utils.OrderBy;
 
 import java.util.Scanner;
 
@@ -34,6 +35,10 @@ public class Main {
             System.out.println("-------------");
         }
         System.out.println(studentRepository.getAll());
+        System.out.println(studentRepository.list(OrderBy.LAST_NAME));
+
+
 
     }
+
 }

@@ -19,6 +19,7 @@ public class StudentRepository {
 
     public StudentRepository() {
         this.studentMap = new HashMap<>();
+        logger.log(Level.INFO, "Student Repository initialized.");
     }
 
     public void add(Student student) {
